@@ -1,83 +1,46 @@
-/************************************************************************************************************************************/
-/** @file		AppDelegate.swift
- *  @project    0_0 - Empty Template (Swift)
- * 	@brief		x
- * 	@details	x
- *
- * 	@notes		x
- *
- * 	@section	Opens
- * 			none current
- *
- *  @section    Reference
- *      UIApplicationDelegate - UIKit (developer.apple.com/documentation/uikit/uiapplicationdelegate)
- *
- * 	@section	Legal Disclaimer
- * 			All contents of this source file and/or any other Jaostech related source files are the explicit property on Jaostech
- * 			Corporation. Do not distribute. Do not copy.
- */
-/************************************************************************************************************************************/
-import UIKit
+//
+//  AppDelegate.swift
+//  EncodeExperiments
+//
+//  Created by dasdom on 16.08.15.
+//  Copyright © 2015 Dominik Hauser. All rights reserved.
+//
 
+import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?;
-    
-    
-    /********************************************************************************************************************************/
-    /** @fcn        init()
-     *  @brief      x
-     *  @details    x
-     */
-    /********************************************************************************************************************************/
-    override init() {
-        super.init();
-        print("AppDelegate.init():           Initialization complete");
-    }
+  var window: UIWindow?
 
-    
-    /********************************************************************************************************************************/
-    /** @fcn        application(application:UIApplication, didFinishLaunchingWithOptions:[UIApplicationLaunchOptionsKey]?)
-     *  @brief      Tells the delegate that the launch process is almost done and the app is almost ready to run
-     *  @details    x
-     *
-     *  @section    Purpose
-     *      Complete your app’s initialization and make any final tweaks
-     *
-     *  @param      [in]_ application: UIApplication - Your singleton app object
-     *  @param      [in] didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]? - A dictionary indicating the reason the app was launched (if any)
-     *
-     *  @return     (Bool) app is able to handle launch
-     *
-     *  @pre        app was launched
-     *  @post       app is initialized and ready for use
-     */
-    /********************************************************************************************************************************/
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-        self.window = UIWindow.init(frame: UIScreen.main.bounds);
-        
-        self.window?.backgroundColor = UIColor.white;
-        
-        let viewController:ViewController = ViewController();
-        
-        viewController.view.translatesAutoresizingMaskIntoConstraints = false;
-        
-        self.window?.rootViewController = viewController;
-        
-        self.window?.makeKeyAndVisible();
-        
-        print("AppDelegate.application():    Application launch complete");
-        
-        return true;
-    }
 
-    func applicationWillResignActive(_ application: UIApplication)    { return; }
-    func applicationDidEnterBackground(_ application: UIApplication)  { return; }
-    func applicationWillEnterForeground(_ application: UIApplication) { return; }
-    func applicationDidBecomeActive(_ application: UIApplication)     { return; }
-    func applicationWillTerminate(_ application: UIApplication)       { return; }
+  func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    // Override point for customization after application launch.
+    return true
+  }
+
+  func applicationWillResignActive(application: UIApplication) {
+    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
+    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+  }
+
+  func applicationDidEnterBackground(application: UIApplication) {
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
+    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+  }
+
+  func applicationWillEnterForeground(application: UIApplication) {
+    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+  }
+
+  func applicationDidBecomeActive(application: UIApplication) {
+    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+  }
+
+  func applicationWillTerminate(application: UIApplication) {
+    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+  }
+
+
 }
 
