@@ -10,27 +10,52 @@ import UIKit
 
 class ViewController: UIViewController {
 
-  @IBOutlet weak var firstNameLabel: UILabel!
-  @IBOutlet weak var lastNameLabel: UILabel!
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-
-    let me = Person(firstName: "Dominik", lastName: "Hauser")
     
-    Person.encode(me)
-    
-    let myClone = Person.decode()
-    
-    firstNameLabel.text = myClone?.firstName
-    lastNameLabel.text = myClone?.lastName
-  }
+    override func viewDidLoad() {
 
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
+        var me : Person;
+        var retrievedPerson : Person?;
+        var status : Bool;
+        
+        super.viewDidLoad()
 
+        //Retrieve
+        retrievedPerson = Person.decode()!;
+        status = (retrievedPerson != nil);
+        
+        //Check if nil
+        if(retrievedPerson != nil) {
+            print("found");
+            me = retrievedPerson!;
+            
+        } else {
+            print("not found, creating new");
+            me = Person(firstName: "Justin", lastName: "Reina");
+        }
+        
+        print("ViewController.viewDidLoad():   1 - \(me.firstName) \(me.lastName) - \(status)");
 
+        //Update
+        me.firstName = me.firstName + "!";
+        me.lastName  = me.lastName + "?";
+
+        print("ViewController.viewDidLoad():   2 - \(me.firstName) \(me.lastName)");
+
+        //Store
+        Person.encode(person: me);
+        
+        //Retrieve
+        retrievedPerson = Person.decode()!;
+        
+        print("ViewController.viewDidLoad():   3 - \(retrievedPerson!.firstName) \(retrievedPerson!.lastName)");
+
+        return;
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+        return;
+    }
 }
 

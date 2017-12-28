@@ -15,6 +15,7 @@
 		D00C8B801FEF569C0091C651 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00C8B7E1FEF569C0091C651 /* AppDelegate.swift */; };
 		D00C8B831FEF56AA0091C651 /* DataBackup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00C8B811FEF56AA0091C651 /* DataBackup.swift */; };
 		D00C8B841FEF56AA0091C651 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00C8B821FEF56AA0091C651 /* Globals.swift */; };
+		D0F8FABB1FF53DD6008E4A12 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F8FABA1FF53DD6008E4A12 /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		D00C8B811FEF56AA0091C651 /* DataBackup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataBackup.swift; path = ../Data/DataBackup.swift; sourceTree = "<group>"; };
 		D00C8B821FEF56AA0091C651 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Globals.swift; path = ../Data/Globals.swift; sourceTree = "<group>"; };
 		D039B4B61BF4D7950024005F /* NSCoding Ref.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NSCoding Ref.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0F8FABA1FF53DD6008E4A12 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Person.swift; path = ../Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 				D0DFAD1F1CB158BA00555B21 /* Base */,
 				D0DFAD221CB159B100555B21 /* Data */,
 				D00C8B7E1FEF569C0091C651 /* AppDelegate.swift */,
+				D0F8FABA1FF53DD6008E4A12 /* Person.swift */,
 				D00C8B7D1FEF569C0091C651 /* ViewController.swift */,
 			);
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0F8FABB1FF53DD6008E4A12 /* Person.swift in Sources */,
 				D00C8B7F1FEF569C0091C651 /* ViewController.swift in Sources */,
 				D00C8B831FEF56AA0091C651 /* DataBackup.swift in Sources */,
 				D00C8B791FEF56910091C651 /* Stdcomments.swift in Sources */,

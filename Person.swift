@@ -9,8 +9,8 @@
 import Foundation
 
 struct Person {
-  let firstName: String
-  let lastName: String
+  var firstName: String
+  var lastName: String
   
   static func encode(person: Person) {
     let personClassObject = HelperClass(person: person)
@@ -19,14 +19,14 @@ struct Person {
   }
   
   static func decode() -> Person? {
-    let personClassObject = NSKeyedUnarchiver.unarchiveObjectWithFile(HelperClass.path()) as? HelperClass
+    let personClassObject = NSKeyedUnarchiver.unarchiveObject(withFile: HelperClass.path()) as? HelperClass
 
     return personClassObject?.person
   }
 }
 
 extension Person {
-  class HelperClass: NSObject, NSCoding {
+    @objc(personHelperClass) class HelperClass: NSObject, NSCoding {
     
     var person: Person?
     
@@ -36,23 +36,24 @@ extension Person {
     }
     
     class func path() -> String {
-      let documentsPath = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true).first
-      let path = documentsPath?.stringByAppendingString("/Person")
+        let documentsPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first
+        let path = documentsPath?.appendingFormat("/Person")
       return path!
     }
     
     required init?(coder aDecoder: NSCoder) {
-      guard let firstName = aDecoder.decodeObjectForKey("firstName") as? String else { person = nil; super.init(); return nil }
-      guard let lastName = aDecoder.decodeObjectForKey("lastName") as? String else { person = nil; super.init(); return nil }
+        guard let firstName = aDecoder.decodeObject(forKey: "firstName") as? String else { person = nil; super.init(); return nil }
+        guard let lastName = aDecoder.decodeObject(forKey: "lastName") as? String else { person = nil; super.init(); return nil }
       
       person = Person(firstName: firstName, lastName: lastName)
       
       super.init()
     }
     
-    func encodeWithCoder(aCoder: NSCoder) {
-      aCoder.encodeObject(person!.firstName, forKey: "firstName")
-      aCoder.encodeObject(person!.lastName, forKey: "lastName")
+    
+    func encode(with aCoder: NSCoder) {
+      aCoder.encode(person!.firstName, forKey: "firstName")
+      aCoder.encode(person!.lastName, forKey: "lastName")
     }
   }
 }
