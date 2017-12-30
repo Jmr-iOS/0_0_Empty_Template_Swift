@@ -5,8 +5,10 @@
 //  Created by dasdom on 16.08.15.
 //  Copyright © 2015 Dominik Hauser. All rights reserved.
 //
-
+//  @todo   file and fcn headers
+//
 import UIKit
+
 
 class ViewController: UIViewController {
 
@@ -20,7 +22,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         //Retrieve
-        retrievedPerson = Person.decode()!;
+        retrievedPerson = Person.decode();
         status = (retrievedPerson != nil);
         
         //Check if nil
